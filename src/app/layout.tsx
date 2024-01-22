@@ -3,7 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 
 import NavBar from '@/components/nav/navBar'
-import { ThemeProvider } from '@/components/theme/provider'
+import { ThemeProvider } from '@/components/providers/theme'
+import SessionProvider from '@/components/providers/session'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,11 +26,12 @@ export default function RootLayout({
                     defaultTheme="dark"
                     disableTransitionOnChange
                 >
-                    <main className="max-w-7xl mx-auto px-5 space-y-5">
+                    <main className="max-w-5xl mx-auto px-5 space-y-5">
                         <NavBar />
                         {children}
                     </main>
                 </ThemeProvider>
+                <SessionProvider />
             </body>
         </html>
     )
